@@ -1,0 +1,5 @@
+applications:
+- name: launchpad
+  command: npm start
+  memory: 256M
+  instances: 1

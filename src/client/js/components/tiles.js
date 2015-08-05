@@ -27,7 +27,6 @@ var TileBox = React.createClass({
   //This sets the refreshing time for this component (passed in using props)
   componentDidMount: function() {
     this.loadTilesFromServer();
-    setInterval(this.loadTilesFromServer, this.props.pollInterval);
   },
   //renders the html
   render: function() {

@@ -64,7 +64,6 @@ var NewsBox = React.createClass({
   // This sets the refreshing time for this component (passed in using props)
   componentDidMount: function() {
     this.loadNewsFromServer();
-    setInterval(this.loadNewsFromServer, this.props.pollInterval);
   },
 
   //this will render it all together using react

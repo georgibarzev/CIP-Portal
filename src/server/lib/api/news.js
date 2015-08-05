@@ -5,8 +5,7 @@ module.exports = function(app) {
 
   
   function list() {
-  	//TODO add app.config for api endpoint depending on environment (dev/master/test)
-    return request('http://news-app-dev.apps.demo.labs.cf.canopy-cloud.com/all')
+    return request(app.config.endpoints.news + "all")
     .then(function (content) {
       var response = content[0];
       if (response != null && response.statusCode == 200)  {

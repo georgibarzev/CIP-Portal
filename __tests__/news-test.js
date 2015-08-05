@@ -1,4 +1,5 @@
-//jest.dontMock('../src/client/js/components/news.js');
+//this is important for when you import your component
+jest.dontMock('../src/client/js/components/news.js');
 
 // unit test for dateTime component
 describe('news', function() {
@@ -6,38 +7,37 @@ describe('news', function() {
 
         //set up (importing needed modules and libarys)
         var React = require('../node_modules/react/addons');
-        var NewsBox = require('../src/client/js/components/news.js').News;
+
+        // this stage is important to link to the correct sub component
+        var News = require('../src/client/js/components/news.js').News;
         var TestUtils = React.addons.TestUtils;
 
+        //dummy data for test
         var title = "News Title"
         var content = "I'm the news content"
 
         //instance of react component
-        var news_comp_title = TestUtils.renderIntoDocument(
-            <NewsBox title={title}/>
+        var news_comp = TestUtils.renderIntoDocument(
+            <News content={content} title={title} />
         );
         
-        // var news_comp_content = TestUtils.renderIntoDocument(
-        //     <NewsBox content={content}/>
-        // );
-        // function test(component){
-        //     return true;
-        // };
-        
-        //expected result
-        var expected_title = title;
-        var expected_content = content;
+        //setting the expected variable here for readability
+        var expected = [title, content];
 
-        //getting the rendered component with the html element you want to look in
-        var news_box_title_rendered = TestUtils.scryRenderedDOMComponentsWithClass (
-            news_comp_title, 'list-group-item-heading');
+        //getting the rendered component with the class you want to look in
+        //here i had used the element with the class with the title in it
+        var news_box_title_rendered = TestUtils.findRenderedDOMComponentWithClass (
+            news_comp, 'list-group-item-heading');
 
-        console.log("here:");
-        console.log(news_box_title_rendered);
-        // console.log(news_box_content_rendered);
+        //here i have used the element with the class with the content in it
+        var news_box_content_rendered = TestUtils.findRenderedDOMComponentWithClass (
+            news_comp, 'list-group-item-text');
 
         //AssertEqual (compare what you are expecting with what you actually have)
-        expect(news_box_title_rendered[0].getDOMNode().textContent).toEqual(expected_title);
-        // expect(news_box_content_rendered[0].getDOMNode().textContent).toEqual('please fail');
+        //expect the title
+        expect(news_box_title_rendered.getDOMNode().textContent).toEqual(expected[0]);
+
+        //expect the content
+        expect(news_box_content_rendered.getDOMNode().textContent).toEqual(expected[1]);
     });
 });

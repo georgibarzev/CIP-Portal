@@ -13,11 +13,11 @@ React.render(
 );
 
 React.render(
-  <NewsBox url="news/" pollInterval={2000}/>,
+  <NewsBox url="news/" />,
   document.getElementById('news_box')
 );
 
 React.render(
-  <TileBox url="tiles/" pollInterval={2000} />,
+  <TileBox url="tiles/" />,
   document.getElementById('tiles_box')
 );

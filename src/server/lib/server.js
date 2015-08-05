@@ -9,7 +9,7 @@ module.exports = function (app) {
   var cors = require('cors')();
   var server = express();
   server.use(cors);
-  server.use(express.static(path.join(app.rootDir, '/src/client/')));
+  server.use(express.static(path.join(app.rootDir, '/dist/')));
   server.use(bodyParser.json());
   server.use(bodyParser.urlencoded({ extended: true }));
   server.use('/', routers.default);
@@ -17,9 +17,8 @@ module.exports = function (app) {
    * Start the express server
    */
   server.start = function(){
-    var config = app.config;
-    var host = 'localhost'  //config.has('HOST') ? config.get('HOST') : 'localhost';
-    var port = 3000         //config.has('PORT') ? config.get('PORT') : 3000;
+    var host =  process.env.VCAP_APP_HOST || '0.0.0.0' 
+    var port = process.env.VCAP_APP_PORT || 3000;
     return new Promise(function(resolve){
       httpHandle = server.listen(port, host, function() {
         console.log('Listening on http://' +  host + ':' + port + '/' );

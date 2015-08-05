@@ -24,16 +24,20 @@ gulp.task('browserify', function() {
     gulp.src('src/client/js/main.js')
       .pipe(browserify({transform:'reactify'}))
       .pipe(concat('app.js'))
-      .pipe(gulp.dest('src/client/'));
+      .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('copy', function() {
-    gulp.src('src/server/public/index.html')
+    gulp.src('src/client/index.html')
       .pipe(gulp.dest('dist'));
+    gulp.src('src/client/css/**/*')
+      .pipe(gulp.dest('dist/css')); 
 });
 
-gulp.task('default',[ 'test', 'browserify', 'copy']);
+gulp.task('build',[ 'browserify', 'copy']);
+
+gulp.task('default',[ 'test', 'build']);
 
 gulp.task('watch', function() {
-    gulp.watch('src/**/*.*', ['default']);
+    gulp.watch('src/**/*.*', ['build']);
 });

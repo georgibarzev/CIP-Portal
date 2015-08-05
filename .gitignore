@@ -1,3 +1,6 @@
+.gitignore.swp
+npm-debug.log
 dist
 clear
 node_modules
+.DS_Store
