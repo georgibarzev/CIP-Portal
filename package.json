@@ -11,8 +11,7 @@
   },
   "scripts": {
     "test": "jest",
-	  "start": "node src/server/lib/processes/server",
-    "launch": "gulp build && npm start"
+    "start": "node_modules/gulp/bin/gulp.js build && node src/server/lib/processes/server"
   },
   "devDependencies": {
     "gulp": "^3.8.11",

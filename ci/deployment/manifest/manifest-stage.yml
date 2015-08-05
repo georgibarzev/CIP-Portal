@@ -1,5 +1,5 @@
 applications:
 - name: launchpad-stage
-  command: npm launch
+  command: npm start
   memory: 256M
   instances: 1
