@@ -1,0 +1,30 @@
+.tile {
+    height: 165px;
+    width: 165px;
+    border: 3px solid white;
+    overflow: hidden;
+    display: inline-block;
+    color: white;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.tile:hover {
+    background-color: #003854 !important;
+}
+
+.tileList {
+    height: 420px;
+    width: 740px;
+    padding: 2px;
+    overflow-y: scroll;
+    margin: auto;
+}
+
+#tileTitle {
+    color:#006DAB;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}

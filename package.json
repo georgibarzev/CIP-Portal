@@ -1,0 +1,39 @@
+{
+  "name": "flux-react-boiletplate",
+  "version": "0.0.1",
+  "description": "Flux/React Boilerplate for CIP-DX",
+  "author": "Canopy",
+  "repository": "https://github.com/CanopyCloud/CIP-DX-Boilerplate/",
+  "readme": "https://github.com/CanopyCloud/CIP-DX-Boilerplate/README.md",
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "unmockedModulePathPatterns": ["<rootDir>/node_modules/react"]
+  },
+  "scripts": {
+    "test": "jest",
+	"start": "node src/server/lib/processes/server"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-browserify": "^0.5.0",
+    "gulp-concat": "^2.2.0",
+    "react-addons":"*",
+    "gulp-jest":"*",
+    "reactify": "^0.13.1"
+  },
+  "dependencies": {
+    "es6-promise": "^1.0.0",
+    "flux": "^2.0.1",
+    "moment": "^2.10.6",
+    "jquery": "*",
+    "object-assign": "^1.0.0",
+    "react": "^0.12.2",
+	"body-parser": "^1.4.3",
+	"express": "^4.4.5",
+	"request": "2.60.0",
+	"lodash": "3.10.0",
+	"winston":"1.0.1",
+	"bluebird":"2.9.34",
+	"cors":"2.7.1"
+  }
+}

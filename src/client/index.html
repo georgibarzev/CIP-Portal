@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <!-- META DATA -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title > Canopy </title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/ticker.css">
+        <link rel="stylesheet" href="css/footer.css"/>
+        <link rel="stylesheet" href="css/tile.css"/>
+
+        <!-- JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="http://momentjs.com/downloads/moment.min.js"></script>
+
+        <!-- React.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+        <!-- canopy favicon -->
+        <link rel="icon" type="image/ico" href="http://canopy-cloud.com/sites/default/files/favicon.ico"/> 
+    </head>
+    <body>
+
+        <!-- NAV BAR -->
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div style="" class="navbar-header">
+                    <a class="navbar-brand" href="#" alt="Canopy">
+                        <img src="http://canopy-cloud.com/sites/all/themes/canopytheme/images/logo.png" alt="Canopy"/>
+                    </a>
+                </div>
+
+                <!-- LOGIN INFO WILL GO IN HERE -->
+                <div class="navbar-right">
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid navbar-bottom">
+            &nbsp;
+        </div>
+
+        <!-- CONTENT -->
+        <div class="container-fluid content" style="  min-height: 600px;">
+            <div>
+                <div class="col-md-8 col-md-push-4 col-sm-8 col-sm-push-4">
+
+                    <!-- TICKER BOX -->
+                    <div class="ticker blue_gradient">
+                        <div id="date_box" class="viewport">  
+                            
+                            <div class="boxtext">
+                                <div>
+                                    <a href="http://onlineclock.net/about/" target="_new">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TILES -->
+                    <div id="tiles_box"> </div>
+
+                </div>
+
+                <!-- MAIN CONTENT -->
+                <div class="col-md-4 col-md-pull-8 col-sm-4 col-sm-pull-8">
+                    <div class="header">
+                    </div>
+                    <br/>
+                    <div id="news_box">
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <!-- FOOTER -->
+        <footer class="footer-wrapper">
+            <div class="footer-foot">
+
+                <!-- SOCIAL NETWORKS -->
+                <div class="footer-social">
+                    <ul>
+                        <li>
+                            <a class="facebook" href="https://www.facebook.com/Canopy?fref=ts" target="_blank">
+                                <span class="element-invisible">
+                                    Facebook
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="twitter" href="https://twitter.com/CanopyCloud" target="_blank">
+                                <span class="element-invisible">
+                                    Twitter
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="linkedin" href="https://www.linkedin.com/company/canopy-cloud" target="_blank">
+                                <span class="element-invisible">
+                                    Linkedin
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="youtube" href="https://www.youtube.com/user/canopycloud" target="_blank">
+                                <span class="element-invisible">
+                                    Youtube
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- USEFULL LINKS -->
+                <div class="footer-links">
+                    © Canopy 2015 &nbsp;&nbsp;&nbsp; 
+                    <a href="/privacy-policy">
+                        Privacy Policy
+                    </a>
+                     &nbsp;&nbsp;&nbsp; 
+                    <a href="/terms-conditions">
+                        Terms &amp; Conditions
+                    </a>
+                     &nbsp;&nbsp;&nbsp; 
+                     <a href="/cookie-policy">
+                        Cookie Policy
+                    </a>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- REACT COMPONENTS -->
+        <script type="text/jsx" src="app.js"></script>
+
+        <!-- FOR TESTING LOCALALLY WITHOUT LOCAL SERVER (NOT ADVISED) -->
+        <script type="text/jsx">
+        </script>
+    </body>
+</html>
+
