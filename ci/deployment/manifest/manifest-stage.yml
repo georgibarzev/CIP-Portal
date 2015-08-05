@@ -1,5 +1,5 @@
 applications:
 - name: launchpad-stage
-  command:  gulp build && npm start
+  command: npm launch
   memory: 256M
   instances: 1
