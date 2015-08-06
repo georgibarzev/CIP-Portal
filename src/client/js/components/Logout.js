@@ -36,7 +36,9 @@ var Logout = React.createClass({
   //renders the html
   render: function() {
     return (
-      <a className="Logout" href="/logout/">Logout</a>
+      <div className="Logout">
+        <a href="/logout/">Logout</a>
+      </div>
     );
   }  
 });
