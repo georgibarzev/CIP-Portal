@@ -5,13 +5,8 @@ var moment = require('../../../../node_modules/moment/moment.js');
 var DateBox = React.createClass({
 
     //sets initial state to the clock
-    getInitialState: function(){
+    getInitialState: function() {
         return { clock: moment().format('MMMM Do YYYY, h:mm a') };
-    },
-
-    //setting refresh time for component
-    componentDidMount: function(){
-        setInterval(this.getDateString, this.props.pollInverval);
     },
 
     //gets all the information needed for the date time and returns it as a string.
