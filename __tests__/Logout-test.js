@@ -18,7 +18,7 @@ describe('Logout', function() {
         );
 
         var Expected = "Logout";
-        var ExpectedURL = "/logout/"
+        var ExpectedURL = "/logout/";
 
         //getting the rendered component with the class you want to look in
         var LogoutRenderedWithClass = TestUtils.findRenderedDOMComponentWithClass (
