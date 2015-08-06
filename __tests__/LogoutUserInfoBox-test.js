@@ -17,7 +17,7 @@ describe('LogoutUserInfo', function() {
                 "email": "someEmail@canopy-cloud.com",
          }];
 
-        var ExpectedEmail = data[0].email;
+        var ExpectedEmail = data[0]["email"];
 
         var LogoutUserInfoBoxComp = TestUtils.renderIntoDocument(
             <LogoutUserInfoBox data={data}/>
