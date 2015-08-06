@@ -25,9 +25,9 @@ React.render(
   document.getElementById('tiles_box')
 );
 
-var data = {
+var data = [{
       "email": "someEmail@canopy-cloud.com",
-};
+}];
 
 React.render(
   <LogoutBox data={data} />,

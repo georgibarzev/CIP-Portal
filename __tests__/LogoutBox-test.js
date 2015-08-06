@@ -2,9 +2,9 @@
 jest.dontMock('../src/client/js/components/Logout.js');
 
 //dummy json tile data to test with.
-var data = {
+var data = [{
                 "email": "someEmail@canopy-cloud.com",
-   };
+   }];
 
 //unit test for Logout component
 describe('LogoutBox', function() {
