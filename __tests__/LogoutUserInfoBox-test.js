@@ -12,10 +12,15 @@ describe('LogoutUserInfo', function() {
         var LogoutUserInfoBox = require('../src/client/js/components/Logout.js').LogoutUserInfoBox;
         var TestUtils = React.addons.TestUtils;
         
-        var ExpectedEmail = "someemail@canopy-cloud.com";
+        //dummy json tile data to test with.
+        var data = [{
+                "email": "someEmail@canopy-cloud.com",
+         }];
+
+        var ExpectedEmail = data[0].email;
 
         var LogoutUserInfoBoxComp = TestUtils.renderIntoDocument(
-            <LogoutUserInfoBox email={ExpectedEmail}/>
+            <LogoutUserInfoBox data={data}/>
         );
 
         //getting the rendered component with the class you want to look in
