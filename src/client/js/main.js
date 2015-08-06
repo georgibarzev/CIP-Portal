@@ -1,4 +1,4 @@
-/** @jsx React.DOM */
+/* @jsx React.DOM */
 var React = require('react');
 
 // Not ideal to use createFactory, but don't know how to use JSX to solve this
@@ -6,6 +6,9 @@ var React = require('react');
 var DateBox = require('./components/DateBox.js');
 var NewsBox = require('./components/news.js').NewsBox;
 var TileBox = require('./components/tiles.js').TileBox;
+var Logout = require('./components/logout.js').LogoutBox;
+
+
 
 React.render(
   <DateBox />,
@@ -20,4 +23,13 @@ React.render(
 React.render(
   <TileBox url="tiles/" />,
   document.getElementById('tiles_box')
+);
+
+var data = {
+      "email": "someEmail@canopy-cloud.com",
+}
+
+React.render(
+  <LogoutBox data={data} />,
+  document.getElementById('logout')
 );
