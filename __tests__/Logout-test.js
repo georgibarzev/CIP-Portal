@@ -27,13 +27,8 @@ describe('Logout', function() {
         //Creating a html object to be able to find attributes inside.
         var HTMLObject= document.createElement('div');
 
-        console.log(HTMLObject);
-        console.log(LogoutRenderedWithClass.getDOMNode().innerHTML);
-
         //setting the innerHTML to the rendered html from react
         HTMLObject.innerHTML = LogoutRenderedWithClass.getDOMNode().innerHTML;
-
-        console.log(HTMLObject);
 
         //Assert Equal checking that the text is being rendered
         expect(LogoutRenderedWithClass.getDOMNode().textContent).toEqual(Expected);

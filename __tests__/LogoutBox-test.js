@@ -19,7 +19,7 @@ describe('LogoutBox', function() {
 
 
         var LogoutBoxComp = TestUtils.renderIntoDocument(
-            <LogoutBox data={data}/>
+            <LogoutBox data={data} />
         );
 
         var Expected = data['email'] + "Logout";
