@@ -27,7 +27,7 @@ React.render(
 
 var data = {
       "email": "someEmail@canopy-cloud.com",
-}
+};
 
 React.render(
   <LogoutBox data={data} />,

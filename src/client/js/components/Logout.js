@@ -21,12 +21,12 @@ var LogoutUserInfoBox = React.createClass({
 
     var userInfo = this.props.data.map(function (user) {
       return (
-        <span> {user.email} </span>     
+        <div className="LogoutUserInfo"> {user.email} </div>     
       );
     });
 
     return (
-      <div className="LogoutUserInfo"> {userInfo} </div>
+      <div> {userInfo} </div>
     );
   }  
 });
