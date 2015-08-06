@@ -1,4 +1,4 @@
-/* @jsx React.DOM */
+/** @jsx React.DOM */
 var React = require('react');
 
 // Not ideal to use createFactory, but don't know how to use JSX to solve this
