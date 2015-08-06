@@ -2,8 +2,10 @@ var gulp = require('gulp');
 var browserify = require('gulp-browserify');
 var concat = require('gulp-concat');
 var jest = require('gulp-jest');
+var mocha = require('gulp-mocha');
 
-gulp.task('test', function () {
+
+gulp.task('test_client', function () {
     return gulp.src('__tests__').pipe(jest({
         scriptPreprocessor: "../node_modules/gulp-jest/preprocessor.js",
         unmockedModulePathPatterns: [
@@ -19,6 +21,14 @@ gulp.task('test', function () {
         ]
     }));
 });
+
+gulp.task('test_server',function() {
+   return gulp.src(['src/server/test/**/*.js'], { read: false })
+        .pipe(mocha({ reporter: 'list' }))
+});
+
+gulp.task('test',['test_client','test_server'])
+
 
 gulp.task('browserify', function() {
     gulp.src('src/client/js/main.js')
