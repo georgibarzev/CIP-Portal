@@ -12,11 +12,10 @@ __tests__ -> ComponentName-test.js -> UnitTesting using react + jest
 ~~~
 ## Use:
 ~~~
-1. git clone https://github.com/CanopyCloud/CIP-DX-Boilerplate
-2. cd CIP-DX-Boilerplate 
+1. git clone https://github.com/CanopyCloud/CIP-Portal
+2. cd CIP-Portal 
 3. npm install
-4. gulp
-5. npm start
+4. npm start
 ~~~
 
 ## Run Tests:
