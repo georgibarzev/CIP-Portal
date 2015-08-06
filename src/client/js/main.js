@@ -6,7 +6,7 @@ var React = require('react');
 var DateBox = require('./components/DateBox.js');
 var NewsBox = require('./components/news.js').NewsBox;
 var TileBox = require('./components/tiles.js').TileBox;
-var Logout = require('./components/Logout.js').LogoutBox;
+var LogoutBox = require('./components/Logout.js').LogoutBox;
 
 
 
