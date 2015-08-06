@@ -6,6 +6,9 @@ var moment = require('moment');
 var DateBox = require('./components/DateBox.js');
 var NewsBox = require('./components/news.js').NewsBox;
 var TileBox = require('./components/tiles.js').TileBox;
+var LogoutBox = require('./components/Logout.js').LogoutBox;
+
+
 
 
 React.render(
@@ -22,4 +25,13 @@ React.render(
 React.render(
   <TileBox url="tiles/" />,
   document.getElementById('tiles_box')
+);
+
+var data = [{
+      "email": "someEmail@canopy-cloud.com",
+}];
+
+React.render(
+  <LogoutBox data={data} />,
+  document.getElementById('logout')
 );

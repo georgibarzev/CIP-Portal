@@ -1,0 +1,13 @@
+#logout-container{
+	padding-bottom: 15px;
+    vertical-align: middle;
+    padding-top: 15px;
+    margin-right: 30px;
+    color: #0066A1;
+    font-weight: bold;
+}
+
+.Logout{
+    text-align: right;
+    padding-top: 8px;
+}
