@@ -22,7 +22,7 @@ describe('LogoutBox', function() {
             <LogoutBox data={data} />
         );
 
-        var Expected = data['email'] + "Logout";
+        var Expected = data[0]['email'] + "Logout";
 
         //getting the rendered component with the class you want to look in
         var LogoutBoxRenderedWithClass = TestUtils.findRenderedDOMComponentWithClass (
