@@ -5,12 +5,25 @@ jest.dontMock('../src/client/js/components/Logout.js');
 describe('LogoutUserInfo', function() {
     it('display the user info (email).', function() {
 
-    	//set up (importing needed modules and libarys)
+     //set up (importing needed modules and libarys)
         var React = require('../node_modules/react/addons');
 
         // this stage is important to link to the correct sub component
         var LogoutUserInfoBox = require('../src/client/js/components/Logout.js').LogoutUserInfoBox;
         var TestUtils = React.addons.TestUtils;
+        
+        var ExpectedEmail = "someemail@canopy-cloud.com";
 
-	});
+        var LogoutUserInfoBoxComp = TestUtils.renderIntoDocument(
+            <LogoutUserInfoBox email={ExpectedEmail}/>
+        );
+
+        //getting the rendered component with the class you want to look in
+        var LogoutUserInfoBoxRenderedWithClass = TestUtils.findRenderedDOMComponentWithClass (
+            LogoutUserInfoBoxComp, 'LogoutUserInfo');
+
+        //Assert Equal checking that the text is being rendered
+        expect(LogoutUserInfoBoxRenderedWithClass.getDOMNode().textContent).toEqual(ExpectedEmail);
+
+ });
 });
