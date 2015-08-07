@@ -4,13 +4,16 @@ var passport = require('passport');
 var session = require('express-session');
 
 module.exports = function(app){
+	"use strict";
+	
+	var router = new express.Router();
 	samlstrategy(passport, app.config);
 
-	app.use(passport.initialize());
-	app.use(passport.session());
+	router.use(passport.initialize());
+	router.use(passport.session());
 
-	"use strict";
-	var router = new express.Router();
+
+
 	require('../routes/news.js')(router,app);
 	require('../routes/tiles.js')(router,app);
 	require('../routes/login.js')(router,app,passport);
