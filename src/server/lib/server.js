@@ -18,6 +18,7 @@ module.exports = function (app) {
   server.use('/', function(req, res, next) {
     if (!req.isAuthenticated()) {
     res.redirect('/login');
+    }
   });
 
   /**
