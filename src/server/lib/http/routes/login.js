@@ -117,7 +117,7 @@ module.exports = function(router,app){
 
                 openreq.end();
             }
-        }
+        };
 
     app.get('/sso/metadata', function(req, res) {
         res.type('application/xml')
