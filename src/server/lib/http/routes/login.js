@@ -1,4 +1,5 @@
 module.exports = function(router,app){
+    
     var request = require('request');
 
     function parseCookies(request) {
@@ -20,7 +21,7 @@ module.exports = function(router,app){
             next();
     };
 
-    app.get('/', function(req, res) {
+    router.get('/', function(req, res) {
         var os = require("os");
         
         console.log(os.hostname());
@@ -35,12 +36,12 @@ module.exports = function(router,app){
 
     });
 
-    app.get('/login/callback', function(req, res) {
+    router.get('/login/callback', function(req, res) {
         //In the event of back call redirect to login
         res.redirect('/login');
     });
 
-    app.post('/login/callback', function(req,res,next){
+    router.post('/login/callback', function(req,res,next){
         passport.authenticate('saml', function(err,user,info){
             if (err){
                 console.log(err);
@@ -58,7 +59,7 @@ module.exports = function(router,app){
     });
 
 
-    app.get('/login',
+    router.get('/login',
         passport.authenticate('saml', {
             failureRedirect: '/login',
             failureFlash: true
@@ -68,7 +69,7 @@ module.exports = function(router,app){
         }
     );
 
-    app.get('/signout', auth,
+    router.get('/signout', auth,
         function(req, res) {
             var ssotoken = req.session.ssotoken;
             if (ssotoken) {
@@ -120,12 +121,12 @@ module.exports = function(router,app){
         }
     );
 
-    app.get('/sso/metadata', function(req, res) {
+    router.get('/sso/metadata', function(req, res) {
         res.type('application/xml')
         res.status(200).send(samlstrategy.getsamlMetadata())
     });
 
-    app.get('/loggedin', function(req, res) {
+    router.get('/loggedin', function(req, res) {
         res.send(req.isAuthenticated() ? req.user : '0');
     });
 
