@@ -26,10 +26,10 @@ module.exports = function(passport, config) {
     });
 
     passport.use(localstrat);
-}
+};
 
 
 module.exports.getsamlMetadata = function() {
     var cert = fs.readFileSync('src/server/cert/certificate.crt', 'utf-8');
     return localstrat.generateServiceProviderMetadata(cert);
-}
+};
