@@ -4,10 +4,7 @@ var passport = require('passport');
 var session = require('express-session');
 
 module.exports = function(app){
-
-	config = app.config.passport;
-
-	samlstrategy(passport, config);
+	samlstrategy(passport, app.config);
 
 	app.use(passport.initialize());
 	app.use(passport.session());

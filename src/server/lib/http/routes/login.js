@@ -1,5 +1,5 @@
-module.exports = function(router,app){
-    
+module.exports = function(router,app,passport){
+
     var request = require('request');
 
     function parseCookies(request) {
