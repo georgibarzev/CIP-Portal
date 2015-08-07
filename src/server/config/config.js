@@ -27,7 +27,7 @@ config.passport = {
                 logoutUrl : 'https://iam.cip-dev.canopy-cloud.com/openam/IDPSloRedirect/metaAlias/ActiveDirectory/idp',
                 issuer : 'passport-saml',
                 callbackUrl: 'https://portal.cip-dev.canopy-cloud.com/login/callback',
-                cert: fs.readFileSync('./cert/forgerock.pem', 'utf-8')
+                cert: fs.readFileSync('../cert/forgerock.pem', 'utf-8')
             }
 };
 
