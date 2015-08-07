@@ -1,5 +1,5 @@
 module.exports = function(router,app){
-
+    var request = require('request');
 
     function parseCookies(request) {
         var list = {},
@@ -58,7 +58,7 @@ module.exports = function(router,app){
     });
 
 
-    app.get('/login',`
+    app.get('/login',
         passport.authenticate('saml', {
             failureRedirect: '/login',
             failureFlash: true
