@@ -14,7 +14,8 @@ module.exports = function(passport, config) {
         cert: config.passport.saml.cert 
     }, function(profile, done) {
         done(null, profile);
-    }
+    };
+    
     passport.serializeUser(function(user, done) {
         done(null, user);
     });
