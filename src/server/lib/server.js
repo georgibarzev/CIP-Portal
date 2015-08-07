@@ -13,6 +13,14 @@ module.exports = function (app) {
   server.use(bodyParser.json());
   server.use(bodyParser.urlencoded({ extended: true }));
   server.use('/', routers.default);
+  
+  var samlstrategy = require('./server/lib/utils/passport');
+
+  samlstrategy(passport, config);
+
+  app.use(passport.initialize());
+  app.use(passport.session());
+
   /**
    * Start the express server
    */
@@ -39,4 +47,3 @@ module.exports = function (app) {
   };
   return server;
 };
-

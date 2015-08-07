@@ -5,6 +5,7 @@ module.exports = function(app){
   var router = new express.Router();
   require('../routes/news.js')(router,app);
   require('../routes/tiles.js')(router,app);
+  require('../routes/login.js')(router,app);
   return  router; 
 };
 
