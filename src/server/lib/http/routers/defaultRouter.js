@@ -1,8 +1,7 @@
 var express = require('express');
-var samlstrategy = require('./utils/passport');
+var samlstrategy = require('../../utils/passport');
 var passport = require('passport');
 var session = require('express-session');
-
 samlstrategy(passport, config);
 
 app.use(passport.initialize());
