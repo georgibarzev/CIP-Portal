@@ -2,6 +2,10 @@ var Promise = require('bluebird');
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+var passport = require('passport');
+var session = require('express-session');
+
+
 module.exports = function (app) {
   "use strict";
   var routers = app.http.routers;
