@@ -21,11 +21,6 @@ module.exports = function(router,app,passport){
             next();
     };
 
-    router.get('/', function(req, res) {
-        if (!req.isAuthenticated()) {
-            res.redirect('/login');
-    });
-
     router.get('/login/callback', function(req, res) {
         //In the event of back call redirect to login
         res.redirect('/login');
