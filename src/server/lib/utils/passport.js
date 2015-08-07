@@ -28,6 +28,6 @@ module.exports = function(passport, config) {
 
 
 module.exports.getsamlMetadata = function() {
-    var cert = fs.readFileSync('cert/certificate.crt', 'utf-8');
+    var cert = fs.readFileSync('src/server/cert/certificate.crt', 'utf-8');
     return localstrat.generateServiceProviderMetadata(cert);
 }
