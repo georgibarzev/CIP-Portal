@@ -9,12 +9,16 @@ module.exports = function (app) {
   var httpHandle;
   var cors = require('cors')();
   var server = express();
+
   server.use(cors);
   server.use(express.static(path.join(app.rootDir, '/dist/')));
   server.use(bodyParser.json());
   server.use(bodyParser.urlencoded({ extended: true }));
-  server.use('/', routers.default);
-  
+ 
+  server.use('/', function(req, res, next) {
+    if (!req.isAuthenticated()) {
+    res.redirect('/login');
+  });
 
   /**
    * Start the express server

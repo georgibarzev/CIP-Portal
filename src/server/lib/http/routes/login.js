@@ -22,18 +22,8 @@ module.exports = function(router,app,passport){
     };
 
     router.get('/', function(req, res) {
-        var os = require("os");
-        
-        console.log(os.hostname());
         if (!req.isAuthenticated()) {
             res.redirect('/login');
-
-        } else {
-            res.render("index", {
-                user: req.user
-            });
-        }
-
     });
 
     router.get('/login/callback', function(req, res) {
