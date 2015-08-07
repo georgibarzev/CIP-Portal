@@ -5,6 +5,7 @@ var SamlStrategy = require('passport-saml').Strategy;
 var localstrat;
 
 module.exports = function(passport, config) {
+    console.log(config);
 
     localstrat = new SamlStrategy({
         path: config.passport.saml.path,
