@@ -1,3 +1,4 @@
+var fs = require('fs');
 var config = {};
 config.endpoints = {};
 config.endpoints.news = "http://news-app-dev.apps.demo.labs.cf.canopy-cloud.com/"
@@ -29,6 +30,5 @@ config.passport = {
                 cert: fs.readFileSync('./cert/forgerock.pem', 'utf-8')
             }
 };
-
 
 module.exports = config;

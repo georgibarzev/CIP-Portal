@@ -14,7 +14,7 @@ module.exports = function (app) {
   server.use(bodyParser.urlencoded({ extended: true }));
   server.use('/', routers.default);
   
-  var samlstrategy = require('./server/lib/utils/passport');
+  var samlstrategy = require('./utils/passport');
 
   samlstrategy(passport, config);
 
