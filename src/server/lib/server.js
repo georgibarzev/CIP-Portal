@@ -14,7 +14,7 @@ module.exports = function (app) {
   server.use(express.static(path.join(app.rootDir, '/dist/')));
   server.use(bodyParser.json());
   server.use(bodyParser.urlencoded({ extended: true }));
-  server.use('/', routers.default);
+  server.use(routers.default);
 
   /**
    * Start the express server
