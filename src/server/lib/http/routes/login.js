@@ -21,7 +21,7 @@ module.exports = function(router,app,passport){
             next();
     };
 
-    router.get('/index', function(req, res, next) {
+    router.get('/', function(req, res, next) {
         if (!req.isAuthenticated()) {
         res.redirect('/login');
         }

@@ -11,13 +11,12 @@ module.exports = function (app) {
   var server = express();
 
   server.use(cors);
-  server.use(express.static(path.join(app.rootDir, '/dist/')));
+
   server.use(bodyParser.json());
   server.use(bodyParser.urlencoded({ extended: true }));
 
-  
-
-  server.use('/', routers.default);
+  server.use('/', app.login, routers.default);
+  server.use(express.static(path.join(app.rootDir, '/dist/')));
 
   /**
    * Start the express server
