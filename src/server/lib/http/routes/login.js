@@ -64,8 +64,8 @@ module.exports = function(router,app,passport){
 
                 var https = require('https');
                 var openreq;
-                var env = process.env.NODE_ENV || 'local',
-                    config = require('../config/config')[env];
+
+                config = app.config;
 
                 var options = {
                     host: config.app.iamserver,
