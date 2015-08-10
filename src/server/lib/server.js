@@ -14,11 +14,10 @@ module.exports = function (app) {
   server.use(express.static(path.join(app.rootDir, '/dist/')));
   server.use(bodyParser.json());
   server.use(bodyParser.urlencoded({ extended: true }));
-  server.use('/', function(req, res, next) {
-        if (!req.isAuthenticated()) {
-        res.redirect('/login');
-        }
-  }, routers.default);
+
+  
+
+  server.use('/', routers.default);
 
   /**
    * Start the express server

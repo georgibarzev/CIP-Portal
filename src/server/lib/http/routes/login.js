@@ -14,12 +14,6 @@ module.exports = function(router,app,passport){
         return list;
     }
 
-    var checkAuth = function(req, res, next) {
-        if (!req.isAuthenticated()) {
-        res.redirect('/login');
-        }
-    };
-
     var auth = function(req, res, next) {
         if (!req.isAuthenticated())
             res.sendStatus(401);
@@ -27,7 +21,7 @@ module.exports = function(router,app,passport){
             next();
     };
 
-    router.get('/', function(req, res, next) {
+    router.get('/index', function(req, res, next) {
         if (!req.isAuthenticated()) {
         res.redirect('/login');
         }
