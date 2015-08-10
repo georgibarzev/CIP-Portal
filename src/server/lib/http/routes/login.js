@@ -28,13 +28,12 @@ module.exports = function(router,app,passport){
 
     router.post('/login/callback', function(req,res,next){
         passport.authenticate('saml', function(err,user,info){
-            console.log(user);  
+
             if (err){
                 console.log(err);
                 return res.redirect('/login');   
             } 
             req.logIn(user, function(err) {
-                console.log("Whatever");
                 if (err) { return next(err); }
                 var cookies = parseCookies(req);
                 req.session.ssotoken = cookies.iPlanetDirectoryPro;
@@ -61,7 +60,7 @@ module.exports = function(router,app,passport){
         function(req, res) {
             var ssotoken = req.session.ssotoken;
             if (ssotoken) {
-
+                console.log(ssotoken);  
                 var https = require('https');
                 var openreq;
 

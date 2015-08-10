@@ -31,6 +31,6 @@ config.passport.saml.logoutUrl = 'https://iam.cip-dev.canopy-cloud.com/openam/ID
 config.passport.saml.issuer = 'passport-saml';
 config.passport.saml.callbackUrl = 'http://52.25.236.103:3000/login/callback';
 config.passport.saml.cert = fs.readFileSync('src/server/cert/forgerock.pem', 'utf-8');
-
+config.passport.saml.iamserver = 'iam.cip-dev.canopy-cloud.com';
 
 module.exports = config;
