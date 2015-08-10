@@ -37,6 +37,7 @@ module.exports = function(router,app,passport){
                 if (err) { return next(err); }
                 var cookies = parseCookies(req);
                 req.session.ssotoken = cookies.iPlanetDirectoryPro;
+                console.log("iPlanetDirectoryPro Cookie --->> " + req.session.ssotoken);
                 console.log("SSO Token --->> " + req.session.ssotoken);
                 res.user = user;             
                 return res.redirect('/');
