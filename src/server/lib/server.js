@@ -32,7 +32,7 @@ module.exports = function (app) {
   server.use(passport.session());
 
 
-  var passportRouters = app.http.routers(passport);
+  var passportRouters = app.http.routers(app, server, passport);
   server.use(passportRouters.default);
 
   server.use('/', app.login);
