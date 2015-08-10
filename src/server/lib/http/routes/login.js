@@ -8,11 +8,13 @@ module.exports = function(router,app,passport){
 
         rc && rc.split(';').forEach(function(cookie) {
             var parts = cookie.split('=');
+            console.log("Parts --->> " + parts);
             list[parts.shift().trim()] = decodeURI(parts.join('='));
         });
 
+        console.log("List --->> " + list);
         return list;
-    }
+    };
 
     var auth = function(req, res, next) {
         if (!req.isAuthenticated())
@@ -37,7 +39,7 @@ module.exports = function(router,app,passport){
                 if (err) { return next(err); };
                 console.log("req --->> " + req);
                 var cookies = parseCookies(req);
-                console.log("Cookies --->> " + cookies.iPlanetDirectoryPro);
+                console.log("Cookies --->> " + cookies);
                 req.session.ssotoken = cookies.iPlanetDirectoryPro;
                 console.log("iPlanetDirectoryPro Cookie --->> " + cookies.iPlanetDirectoryPro);
                 console.log("SSO Token --->> " + req.session.ssotoken);
