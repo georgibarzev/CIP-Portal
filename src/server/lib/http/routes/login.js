@@ -60,7 +60,7 @@ module.exports = function(router,app,passport){
         function(req, res) {
             var ssotoken = req.session.ssotoken;
             if (ssotoken) {
-                console.log(ssotoken);  
+                console.log("SSO Token: "ssotoken);  
                 var https = require('https');
                 var openreq;
 
