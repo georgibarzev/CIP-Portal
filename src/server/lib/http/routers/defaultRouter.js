@@ -6,7 +6,7 @@ var session = require('express-session');
 module.exports = function(app, server, passport){
 	"use strict";
 
-	router = server;
+	var router = server;
 
 	require('../routes/news.js')(router,app);
 	require('../routes/tiles.js')(router,app);
