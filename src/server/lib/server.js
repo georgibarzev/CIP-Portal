@@ -12,7 +12,7 @@ module.exports = function (app) {
   var httpHandle;
   var cors = require('cors')();
   var server = express();
-  var passportRouters = app.http.routers(server, passport);
+
 
   server.use(cors);
 
@@ -32,7 +32,7 @@ module.exports = function (app) {
   server.use(passport.session());
 
 
-
+  var passportRouters = app.http.routers(passport);
   server.use(passportRouters.default);
 
   server.use('/', app.login);
