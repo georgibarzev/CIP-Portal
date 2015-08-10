@@ -3,6 +3,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
 var session = require('express-session');
+var samlstrategy = require('../../utils/passport');
+var passport = require('passport');
 
 module.exports = function (app) {
   "use strict";
@@ -21,9 +23,15 @@ module.exports = function (app) {
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false }
-  }))
+  }));
 
-  server.use(routers.default);
+  samlstrategy(passport, app.config);
+
+  server.use(passport.initialize());
+  server.use(passport.session());
+
+  passportRouters = routers(passport);
+  server.use(passportRouters);
 
   server.use('/', app.login);
 
