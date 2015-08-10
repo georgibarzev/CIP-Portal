@@ -1,5 +1,4 @@
 var express = require('express');
-var samlstrategy = require('../../utils/passport');
 
 module.exports = function(app, passport){
 	"use strict";
