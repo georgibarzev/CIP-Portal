@@ -21,12 +21,6 @@ module.exports = function(router,app,passport){
             next();
     };
 
-    router.get('/', function(req, res, next) {
-        if (!req.isAuthenticated()) {
-        res.redirect('/login');
-        }
-    });
-
     router.get('/login/callback', function(req, res) {
         //In the event of back call redirect to login
         res.redirect('/login');
@@ -34,16 +28,17 @@ module.exports = function(router,app,passport){
 
     router.post('/login/callback', function(req,res,next){
         passport.authenticate('saml', function(err,user,info){
-            console.log("Whatever");
+            console.log(user);  
             if (err){
                 console.log(err);
                 return res.redirect('/login');   
             } 
             req.logIn(user, function(err) {
+                console.log("Whatever");
                 if (err) { return next(err); }
                 var cookies = parseCookies(req);
                 req.session.ssotoken = cookies.iPlanetDirectoryPro;
-                res.user = user;
+                res.user = user;             
                 return res.redirect('/');
             });
             
