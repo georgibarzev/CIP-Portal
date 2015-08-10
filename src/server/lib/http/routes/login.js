@@ -37,6 +37,7 @@ module.exports = function(router,app,passport){
                 if (err) { return next(err); }
                 var cookies = parseCookies(req);
                 req.session.ssotoken = cookies.iPlanetDirectoryPro;
+                console.log("SSO Token --->> "req.session.ssotoken);
                 res.user = user;             
                 return res.redirect('/');
             });
@@ -59,10 +60,11 @@ module.exports = function(router,app,passport){
     router.get('/logout', auth,
         function(req, res) {
             console.log("Clicked on Logout Button");
+            console.log("SSO Token: " + req.session.ssotoken);
             var ssotoken = req.session.ssotoken;
             if (ssotoken) {
-                console.log("SSO Token: "+ssotoken);  
-                var https = require('https');
+ 
+                 var https = require('https');
                 var openreq;
 
                 config = app.config;
