@@ -29,7 +29,7 @@ config.passport.saml.path = '/login/callback';
 config.passport.saml.entryPoint = 'https://iam.cip-dev.canopy-cloud.com/openam/SSORedirect/metaAlias/ActiveDirectory/idp';
 config.passport.saml.logoutUrl = 'https://iam.cip-dev.canopy-cloud.com/openam/IDPSloRedirect/metaAlias/ActiveDirectory/idp';
 config.passport.saml.issuer = 'passport-saml';
-config.passport.saml.callbackUrl = 'https://portal.cip-dev.canopy-cloud.com/login/callback';
+config.passport.saml.callbackUrl = 'http://52.25.236.103:3000/login/callback';
 config.passport.saml.cert = fs.readFileSync('src/server/cert/forgerock.pem', 'utf-8');
 
 
