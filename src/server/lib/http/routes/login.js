@@ -42,7 +42,7 @@ module.exports = function(router,app,passport){
                 if (err) { return next(err); }
                 var cookies = parseCookies(req);
                 req.session.ssotoken = cookies.iPlanetDirectoryPro;
-                res.user = user
+                res.user = user;
                 return res.redirect('/');
             });
             

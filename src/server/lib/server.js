@@ -2,6 +2,7 @@ var Promise = require('bluebird');
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+var session = require('express-session');
 
 module.exports = function (app) {
   "use strict";
@@ -14,10 +15,20 @@ module.exports = function (app) {
 
   server.use(bodyParser.json());
   server.use(bodyParser.urlencoded({ extended: true }));
-  
+
+  server.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+  }))
+
   server.use(routers.default);
+
   server.use('/', app.login);
+
   server.use(express.static(path.join(app.rootDir, '/dist/')));
+
 
   /**
    * Start the express server
