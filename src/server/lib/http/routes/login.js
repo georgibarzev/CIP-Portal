@@ -33,7 +33,20 @@ module.exports = function(router,app,passport){
     });
 
     router.post('/login/callback', function(req,res,next){
-        passport.authenticate('saml', { successRedirect: '/', failureRedirect: '/login' });
+        passport.authenticate('saml', function(err,user,info){
+            if (err){
+                console.log(err);
+                return res.redirect('/login');   
+            } 
+            req.logIn(user, function(err) {
+                if (err) { return next(err); }
+                var cookies = parseCookies(req);
+                req.session.ssotoken = cookies.iPlanetDirectoryPro;
+                res.user = user
+                return res.redirect('/');
+            });
+            
+        })(req,res,next);
     });
 
 
