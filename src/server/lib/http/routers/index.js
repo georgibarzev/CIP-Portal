@@ -1,6 +1,6 @@
-module.exports = function(app, server, passport){
+module.exports = function(app, passport){
   "use strict";
   var routers = {};
-  routers.default = require('./defaultRouter')(app,server,passport);
+  routers.default = require('./defaultRouter')(app,passport);
   return routers;
 };

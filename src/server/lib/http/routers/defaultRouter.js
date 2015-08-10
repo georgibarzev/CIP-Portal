@@ -3,10 +3,10 @@ var samlstrategy = require('../../utils/passport');
 var passport = require('passport');
 var session = require('express-session');
 
-module.exports = function(app, server, passport){
+module.exports = function(app, passport){
 	"use strict";
 
-	var router = server;
+	var router = new express.Router();
 
 	require('../routes/news.js')(router,app);
 	require('../routes/tiles.js')(router,app);
