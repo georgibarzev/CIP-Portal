@@ -18,7 +18,7 @@ module.exports = function (app) {
         if (!req.isAuthenticated()) {
         res.redirect('/login');
         }
-  });
+  }, routers.default);
 
   /**
    * Start the express server
