@@ -33,7 +33,7 @@ module.exports = function(router,app,passport){
     });
 
     router.post('/login/callback', function(req,res,next){
-        passport.authenticate('saml', function(err,user,info){
+    /*    passport.authenticate('saml', function(err,user,info){
             if (err){
                 console.log(err);
                 return res.redirect('/login');   
@@ -42,11 +42,13 @@ module.exports = function(router,app,passport){
                 if (err) { return next(err); }
                 var cookies = parseCookies(req);
                 req.session.ssotoken = cookies.iPlanetDirectoryPro;
-                res.user = user
+                res.user = user;
                 return res.redirect('/');
             });
             
-        })(req,res,next);
+        })(req,res,next);*/
+        console.log("Whatever");
+        next();
     });
 
 
