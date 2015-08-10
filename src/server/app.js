@@ -14,6 +14,7 @@ app.api = require(__dirname + '/lib/api')(app);
 app.http = require(__dirname + '/lib/http')(app);
 app.server = require(__dirname + '/lib/server.js')(app);
 app.error = app.utils.error;
+app.login = app.utils.login;
 
 app.start = function(){
   return app.server.start(app);
