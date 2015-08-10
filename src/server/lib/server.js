@@ -14,8 +14,9 @@ module.exports = function (app) {
 
   server.use(bodyParser.json());
   server.use(bodyParser.urlencoded({ extended: true }));
-
-  server.use('/', app.login, routers.default);
+  
+  server.use(routers.default);
+  server.use('/', app.login);
   server.use(express.static(path.join(app.rootDir, '/dist/')));
 
   /**
