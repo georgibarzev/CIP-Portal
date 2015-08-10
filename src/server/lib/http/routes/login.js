@@ -58,6 +58,7 @@ module.exports = function(router,app,passport){
 
     router.get('/logout', auth,
         function(req, res) {
+            console.log("Clicked on Logout Button");
             var ssotoken = req.session.ssotoken;
             if (ssotoken) {
                 console.log("SSO Token: "+ssotoken);  
