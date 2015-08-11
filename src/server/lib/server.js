@@ -32,7 +32,7 @@ module.exports = function (app) {
 
   server.use(routers.default);
 
-  server.use('/', app.login,routers);
+  server.use('/', app.login);
 
   server.use(express.static(path.join(app.rootDir, '/dist/')));
 
