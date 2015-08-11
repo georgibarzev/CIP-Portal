@@ -26,7 +26,8 @@ module.exports = function (app) {
   }));
 
   samlstrategy(passport, app.config);
-
+  console.log(passport);
+  
   server.use(passport.initialize());
   server.use(passport.session());
 

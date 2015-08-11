@@ -1,5 +1,6 @@
 module.exports = function(router,app,passport){
-
+    console.log("Login Route: " + passport);
+    
     var request = require('request');
 
     function parseCookies(request) {
