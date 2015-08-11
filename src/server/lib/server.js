@@ -17,7 +17,6 @@ module.exports = function (app) {
   server.use(bodyParser.json());
   server.use(bodyParser.urlencoded({ extended: true }));
 
-  console.log("HOST: " + request.headers.host);
   server.use(session({
     secret: 'keyboard cat',
     resave: false,

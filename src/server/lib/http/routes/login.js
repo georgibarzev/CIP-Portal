@@ -2,7 +2,7 @@ module.exports = function(router,app){
     var passport = require('passport');
 
     console.log("Login Route: " + passport);
-
+    console.log("HOST: " + request.headers.host);
     var request = require('request');
 
     function parseCookies(request) {
