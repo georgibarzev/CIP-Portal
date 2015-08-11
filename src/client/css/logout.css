@@ -11,6 +11,8 @@
 .Logout{
     text-align: right;
     padding-top: 8px;
+    float: right;
+    margin-top: -48px;
 
 }
 
@@ -28,3 +30,9 @@
 	}
 }
 
+.LogoutUserInfo{
+
+	
+    display: none;
+
+}
