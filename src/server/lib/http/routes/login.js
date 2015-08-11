@@ -54,9 +54,6 @@ module.exports = function(router,app){
 
     });
 
-    router.get('/', app.login);
-
-
     router.get('/login', 
         passport.authenticate('saml', {
             failureRedirect: '/login',
