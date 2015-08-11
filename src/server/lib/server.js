@@ -10,7 +10,7 @@ module.exports = function (app) {
   var cors = require('cors')();
   var server = express();
   var session = require('express-session');
-  var samlstrategy = require('../utils/passport');
+  var samlstrategy = require('/utils/passport');
   var passport = require('passport');
 
   server.use(cors);
