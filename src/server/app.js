@@ -8,6 +8,7 @@ app.config = require(__dirname + '/config/config.js');
 var Log = require(__dirname + '/lib/logfilename.js');
 app.log = new Log(app);
 app.utils = require(__dirname + '/lib/utils')(app);
+app.passport = app.utils.passport;
 app.login = app.utils.login;
 app.error = app.utils.error;
 app.api = require(__dirname + '/lib/api')(app);

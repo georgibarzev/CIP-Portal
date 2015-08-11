@@ -10,7 +10,6 @@ module.exports = function (app) {
   var cors = require('cors')();
   var server = express();
   var session = require('express-session');
-  var samlstrategy = require('/utils/passport');
   var passport = require('passport');
 
   server.use(cors);
@@ -25,12 +24,15 @@ module.exports = function (app) {
     cookie: { secure: false }
   }));
 
+  var samlstrategy = app.passport;
   samlstrategy(passport, app.config);
 
   server.use(passport.initialize());
   server.use(passport.session());
 
-  server.use('/', app.login, routers.default);
+  server.use(routers.default);
+
+  server.use('/', app.login,routers);
 
   server.use(express.static(path.join(app.rootDir, '/dist/')));
 
