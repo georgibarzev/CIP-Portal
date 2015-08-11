@@ -22,9 +22,11 @@ module.exports = function (app) {
     cookie: { secure: false }
   }));
 
-  var samlstrategy = require('../../utils/passport');
+  var samlstrategy = require('../utils/passport');
   var passport = require('passport');
   var session = require('express-session');
+
+  console.log("Test");
 
   samlstrategy(passport, app.config);
   console.log("Passport: " + passport);
