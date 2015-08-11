@@ -30,7 +30,7 @@ module.exports = function (app) {
   server.use(passport.initialize());
   server.use(passport.session());
 
-  var passportRouter = require("./lib/http/routers")(app, passport);
+  var passportRouter = routers(passport);
   
   server.use(passportRouter.default);
 
