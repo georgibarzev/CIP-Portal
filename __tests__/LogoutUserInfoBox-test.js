@@ -14,7 +14,7 @@ describe('LogoutUserInfo', function() {
         
         //dummy json tile data to test with.
         var data = [{
-                "email": "someEmail@canopy-cloud.com",
+                "email": "jenny.bates@canopy-cloud.com",
          }];
 
         var ExpectedEmail = data[0]["email"];
