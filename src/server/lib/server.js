@@ -13,7 +13,6 @@ module.exports = function (app) {
   var cors = require('cors')();
   var server = express();
 
-
   server.use(cors);
 
   server.use(bodyParser.json());
@@ -31,9 +30,7 @@ module.exports = function (app) {
   server.use(passport.initialize());
   server.use(passport.session());
 
-
-  var passportRouters = app.http.routers(app, passport);
-  server.use(passportRouters.default);
+  server.use(routers.default);
 
   server.use('/', app.login);
 
