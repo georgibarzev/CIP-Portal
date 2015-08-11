@@ -1,6 +1,6 @@
 module.exports = function(router,app){
     var passport = require('passport');
-    
+
     console.log("Login Route: " + passport);
 
     var request = require('request');
@@ -54,8 +54,10 @@ module.exports = function(router,app){
 
     });
 
+    router.get('/', app.login);
 
-    router.get('/login',
+
+    router.get('/login', 
         passport.authenticate('saml', {
             failureRedirect: '/login',
             failureFlash: true
