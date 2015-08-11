@@ -2,9 +2,6 @@ var Promise = require('bluebird');
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
-var session = require('express-session');
-var samlstrategy = require('../../utils/passport');
-var passport = require('passport');
 
 module.exports = function (app) {
   "use strict";
@@ -24,6 +21,10 @@ module.exports = function (app) {
     saveUninitialized: true,
     cookie: { secure: false }
   }));
+
+  var samlstrategy = require('../../utils/passport');
+  var passport = require('passport');
+  var session = require('express-session');
 
   samlstrategy(passport, app.config);
   console.log("Passport: " + passport);
