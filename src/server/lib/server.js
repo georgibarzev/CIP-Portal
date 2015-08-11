@@ -5,18 +5,18 @@ var path = require('path');
 
 module.exports = function (app) {
   "use strict";
+  var routers = app.http.routers;
   var httpHandle;
   var cors = require('cors')();
   var server = express();
+  var session = require('express-session');
+  var samlstrategy = require('../utils/passport');
+  var passport = require('passport');
 
   server.use(cors);
 
   server.use(bodyParser.json());
   server.use(bodyParser.urlencoded({ extended: true }));
-
-  var session = require('express-session');
-  var samlstrategy = require('../utils/passport');
-  var passport = require('passport');
 
   server.use(session({
     secret: 'keyboard cat',
@@ -25,20 +25,12 @@ module.exports = function (app) {
     cookie: { secure: false }
   }));
 
-  console.log("Test");
-  console.log("samlstrategy: " + samlstrategy);
-
   samlstrategy(passport, app.config);
-  console.log("Passport: " + passport);
 
   server.use(passport.initialize());
   server.use(passport.session());
 
-  var passportRouter = app.http.routers(app, passport);
-  
-  server.use(passportRouter.default);
-
-  server.use('/', app.login);
+  server.use('/', app.login, routers.default);
 
   server.use(express.static(path.join(app.rootDir, '/dist/')));
 
