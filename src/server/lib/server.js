@@ -31,7 +31,7 @@ module.exports = function (app) {
   server.use(passport.session());
 
   server.use(routers.default);
-  router.get('/', app.login);
+  server.use('/', app.login);
   server.use(express.static(path.join(app.rootDir, '/dist/')));
 
 
