@@ -1,0 +1,23 @@
+#shout_box_container{
+	margin-top:-200px;
+    width: 40%;
+    text-align: center;
+    margin: auto;
+}
+
+.shout_box {
+	margin-top:-200px;
+}
+
+#shout_box_input{
+	background-color: transparent;
+	border:0px;
+	font-size: 20px;
+	color:white;
+	font-style: italic;
+}
+
+.locator {
+	top: -25px;
+    left: 290px;
+}

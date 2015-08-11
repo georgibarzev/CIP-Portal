@@ -1,12 +1,16 @@
+#tiles_box{margin-top:-40px;}
+
 .tile {
-    height: 165px;
-    width: 165px;
-    border: 3px solid white;
+    height: 120px;
+    width: 120px;
     overflow: hidden;
     display: inline-block;
     color: white;
-    margin: 5px;
+    margin: 10px;
     font-weight: bold;
+    border: solid white 2px;
+    border-radius: 7px;
+    box-shadow: 3px 3px 16px grey;
 }
 
 .tile:hover {
@@ -15,11 +19,30 @@
 
 .tileList {
     height: 420px;
-    width: 740px;
-    padding: 2px;
-    overflow-y: scroll;
+    width: 570px;
     margin: auto;
 }
+
+@media (max-width:1110px){
+    .tileList {
+        width: 575px;
+    } 
+}
+
+@media (max-width:845px){
+    .tileList {
+        width: 410px;
+    } 
+}
+
+@media (max-width:380px){
+    .tileList {
+        width: 200px;
+        height: 1000px;
+
+    } 
+}
+
 
 #tileTitle {
     color:#006DAB;

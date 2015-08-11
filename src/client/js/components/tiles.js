@@ -32,7 +32,7 @@ var TileBox = React.createClass({
   render: function() {
     return (
       <div className="tileBox">
-        <div id="tileTitle">Services</div>
+        <div id="tileTitle"></div>
         <TileList data={this.state.data} />
       </div>
     );
